@@ -30,5 +30,5 @@ ruby cli.rb -q [search_query] -s [batch_size]
 Example:
 
 ```
-ruby cli.rb -m get_by_id -t [object_type] -i [object_id]
+ruby cli.rb -q test -s 5
 ```
