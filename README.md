@@ -1,6 +1,10 @@
 # HubSpot Search results iteration sample app
 
-This is a sample app for the HubSpot [client libraries](https://developers.hubspot.com/docs/api/overview). This sample app demonstrates how to reach Hubspot Rate limit.
+This is a sample app for the HubSpot [client libraries](https://developers.hubspot.com/docs/api/overview). This sample app demonstrates how to iterate through Hubspot search results.
+
+## Reference
+
+- [CRM Search ](https://developers.hubspot.com/docs/api/crm/search)
 
 ## How to run locally
 
