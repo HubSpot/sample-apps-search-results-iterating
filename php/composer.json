@@ -1,0 +1,18 @@
+{
+    "minimum-stability": "stable",
+
+    "require": {
+        "hubspot/api-client": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/functions.php"
+        ],
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
