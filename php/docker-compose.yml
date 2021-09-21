@@ -17,6 +17,7 @@ services:
             - 8999:80
         volumes:
             - ./src:/app/src
+            - ./.php_cs:/app/.php_cs
     redis:
         container_name: php-search-results-iterating-app-redis
         image: redis:latest
