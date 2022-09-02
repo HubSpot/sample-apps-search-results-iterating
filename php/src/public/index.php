@@ -20,13 +20,13 @@ try {
     if ('/' === $uri) {
         header('Location: /readme');
 
-        exit();
+        exit;
     }
 
     if (!in_array($uri, array_merge($publicRoutes, $protectedRoutes))) {
         http_response_code(404);
 
-        exit();
+        exit;
     }
 
     $path = __DIR__.'/../actions'.$uri.'.php';
@@ -37,5 +37,5 @@ try {
 
     include __DIR__.'/../views/error.php';
 
-    exit();
+    exit;
 }
