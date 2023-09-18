@@ -5,10 +5,9 @@ services:
     image: redis
     command: redis-server --appendonly yes
     volumes:
-      - ./redis-data:/data
+      - ./db/redis:/data
     ports:
       - 6379:6379
-
   web:
     env_file:
       - src/.env
