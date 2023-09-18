@@ -10,7 +10,7 @@ const hubspotClientHelper = require('./src/helpers/hubspot-client-helper')
 const PORT = 3000
 const CLIENT_ID = process.env.HUBSPOT_CLIENT_ID
 const CLIENT_SECRET = process.env.HUBSPOT_CLIENT_SECRET
-const SCOPES = 'contacts'
+const SCOPES = 'crm.objects.contacts.read'
 const REDIRECT_URI = `http://localhost:${PORT}/oauth-callback`
 
 const checkEnv = (req, res, next) => {
@@ -86,7 +86,7 @@ app.get('/login', async (req, res) => {
     const isAuthorized = await oauthHelper.verifyAuthorization()
     console.log('Is logged-in', isAuthorized)
     if (isAuthorized) return res.redirect('/')
-    res.render('login')
+    res.render('login', { redirectUri: REDIRECT_URI })
 })
 
 app.get('/oauth', async (req, res) => {

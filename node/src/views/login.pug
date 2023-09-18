@@ -1,5 +1,12 @@
 extends includes/layout
 block content
-  section(class='container')
-    div(class='row authorize-button')
-      a(class='button' href='/oauth', id='authorize-button') Authorize
+  .container.text-center
+    h3 In order to continue please update the redirect URL on Auth settings page  of your app
+    h4 Redirect URL
+    pre#redirectURL #{redirectUri}
+    button.button-primary#copyBtn Copy
+    h3 After that authorize via OAuth
+    .authorize-button
+      a(class='button' href='/oauth') Authorize
+block footerScripts
+  script(type='application/javascript' src='/js/login.js')
