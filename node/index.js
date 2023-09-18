@@ -1,11 +1,11 @@
-require('./config')
+require('./src/config')
 const _ = require('lodash')
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
-const dbHelper = require('./helpers/db-helper')
-const oauthHelper = require('./helpers/oauth-helper')
-const hubspotClientHelper = require('./helpers/hubspot-client-helper')
+const dbHelper = require('./src/helpers/db-helper')
+const oauthHelper = require('./src/helpers/oauth-helper')
+const hubspotClientHelper = require('./src/helpers/hubspot-client-helper')
 
 const PORT = 3000
 const CLIENT_ID = process.env.HUBSPOT_CLIENT_ID
@@ -54,9 +54,9 @@ const handleError = (e, res) => {
     res.redirect(`/error?msg=${JSON.stringify(e, Object.getOwnPropertyNames(e), 2)}`)
 }
 
-app.use(express.static('public'))
+app.use(express.static('src/public'))
 app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'src/views'))
 
 app.use(
     bodyParser.urlencoded({

@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 
 services:
   redis:
@@ -10,18 +10,18 @@ services:
       - 6379:6379
   web:
     env_file:
-      - src/.env
+      - .env
     environment:
       REDIS_HOST: redis
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./src:/search-results-paging-sample-app/src
-      - /search-results-paging-sample-app/src/node_modules
-      - ./tools:/search-results-paging-sample-app/tools
+      - ./src:/app/src
+      - ./tools:/app/tools
+      - ./index.js:/app/index.js
     ports:
       - 3000:3000
-    command: ../tools/wait-for-it.sh redis:6379 -t 30 --strict -- npm run dev
+    command: ./tools/wait-for-it.sh redis:6379 -t 30 --strict -- npm run dev
     depends_on:
       - redis
