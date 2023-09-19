@@ -107,18 +107,18 @@ app.get('/oauth-callback', async (req, res) => {
     // POST /oauth/v1/token
     // https://developers.hubspot.com/docs/api/working-with-oauth
     console.log('Retrieving access token by code:', code)
-    const tokenStoreResult = await hubspotClient.oauth.defaultApi.createToken(
+    const tokenStoreResult = await hubspotClient.oauth.tokensApi.create(
         'authorization_code',
         code,
         REDIRECT_URI,
         CLIENT_ID,
-        CLIENT_SECRET,
+        CLIENT_SECRET
     )
     logResponse(tokenStoreResult)
     // Set token for the
     // https://www.npmjs.com/package/@hubspot/api-client
-    await dbHelper.saveTokens(tokenStoreResult.body)
-    hubspotClient.setAccessToken(tokenStoreResult.body.accessToken)
+    await dbHelper.saveTokens(tokenStoreResult)
+    hubspotClient.setAccessToken(tokenStoreResult.accessToken)
     res.redirect('/')
 })
 

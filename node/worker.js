@@ -25,7 +25,7 @@ const searchNextContactsBatch = async (after, limit, query) => {
     // POST /crm/v3/objects/contacts/search
     // https://developers.hubspot.com/docs/api/crm/contacts
     const result = await hubspotClient.crm.contacts.searchApi.doSearch(searchParams)
-    return _.get(result, 'body.results') || []
+    return _.get(result, 'results') || []
 }
 
 const processContactsBatch = (contactsBatch) => {
