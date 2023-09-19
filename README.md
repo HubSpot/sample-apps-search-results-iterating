@@ -4,7 +4,7 @@ This is a sample app for the HubSpot [client libraries](https://developers.hubsp
 
 ## Reference
 
-- [CRM Search ](https://developers.hubspot.com/docs/api/crm/search)
+- [CRM Search](https://developers.hubspot.com/docs/api/crm/search)
 
 ## How to run locally
 
@@ -16,11 +16,10 @@ This is a sample app for the HubSpot [client libraries](https://developers.hubsp
 cp node/.env.template node/.env
 ```
 
-5. Paste your HubSpot API Key as the value for HUBSPOT_API_KEY in .env
+4. Paste your HubSpot API Key as the value for HUBSPOT_API_KEY in .env
+5. Follow the language instructions on how to run. For example, if you want to run the Node server:
 
-6. Follow the language instructions on how to run. For example, if you want to run the Node server:
-
-```
+```bash
 cd node # there's a README in this folder with instructions
 npm install
 ./bin/cli.js
@@ -28,6 +27,7 @@ npm install
 
 ## Supported languages
 
-* [Php](php/README.md)
-* [Python](python/README.md)
-* [Ruby](ruby/README.md)
+- [JavaScript (Node)](node/README.md)
+- [Php](php/README.md)
+- [Python](python/README.md)
+- [Ruby](ruby/README.md)
