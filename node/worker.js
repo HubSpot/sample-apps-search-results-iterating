@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const hubspotClientHelper = require('./helpers/hubspot-client-helper')
+const hubspotClientHelper = require('./src/helpers/hubspot-client-helper')
 const SEARCH_LIMIT = 100
 let hubspotClient
 

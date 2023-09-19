@@ -20,6 +20,7 @@ services:
       - ./src:/app/src
       - ./tools:/app/tools
       - ./index.js:/app/index.js
+      - ./worker.js:/app/worker.js
     ports:
       - 3000:3000
     command: ./tools/wait-for-it.sh redis:6379 -t 30 --strict -- npm run dev
