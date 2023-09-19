@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  redis:
+    image: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - ./db/redis:/data
+    ports:
+      - 6379:6379
+  web:
+    env_file:
+      - .env
+    environment:
+      REDIS_HOST: redis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./tools:/app/tools
+      - ./index.js:/app/index.js
+      - ./worker.js:/app/worker.js
+    ports:
+      - 3000:3000
+    command: ./tools/wait-for-it.sh redis:6379 -t 30 --strict -- npm run dev
+    depends_on:
+      - redis

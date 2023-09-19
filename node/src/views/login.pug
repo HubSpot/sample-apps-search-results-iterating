@@ -1,0 +1,12 @@
+extends includes/layout
+block content
+  .container.text-center
+    h3 In order to continue please update the redirect URL on Auth settings page  of your app
+    h4 Redirect URL
+    pre#contentForCopy #{redirectUri}
+    button.button-primary#copyBtn Copy
+    h3 After that authorize via OAuth
+    .authorize-button
+      a(class='button' href='/oauth') Authorize
+block footerScripts
+  script(type='application/javascript' src='/js/copy.js')

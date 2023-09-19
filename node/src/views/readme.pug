@@ -1,0 +1,8 @@
+extends includes/layout
+block content
+  .container.text-center
+    h3 Run the following command to see iterating via search results in action:
+    pre#contentForCopy docker-compose exec web node worker.js
+    button.button-primary#copyBtn Copy
+block footerScripts
+  script(type='application/javascript' src='/js/copy.js')
